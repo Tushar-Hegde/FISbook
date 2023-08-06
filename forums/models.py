@@ -22,6 +22,8 @@ class Events(models.Model):
     title = models.CharField(max_length=150)
     about = models.TextField()
     date = models.DateTimeField()
+    is_public = models.BooleanField(default=False)
+    users_added = models.ManyToManyField(CustomUser,blank=True,related_name='events_added')
 
     
 class Notices(models.Model):
