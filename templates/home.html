@@ -1,32 +1,22 @@
 {% extends '_base.html' %}
 
-<style>
-    h1 {
-        color:Green;
-    }
-    div.scroll {
-        margin:4px, 4px;
-        padding:4px;
-        background-color: green;
-        width: 500px;
-        height: 110px;
-        overflow-x: hidden;
-        overflow-y: auto;
-        text-align:justify;
-    }
-</style>
-
-
 {% block content %}
+
 <h1>Homepage</h1>
 
 <p>Hello {{user.first_name}}</p>
+<a href="{% url 'users:logout' %}">Log out</a>
+<br><br><br>
 
+<h2>Forums:</h2>
 {% for forum in forums %}
     <a href="{% url 'forums:forum' forum.id %}">{{forum.name}}</a>
 {% endfor %}
+
+<br>
+<h2>Events:</h2>
 {% for event in events %}
-    <p>{{event.title}}</p>
+    <p>{{event.title}}<br>{{event.date}}</p>
 {% endfor %}
 
 {% endblock content %}

@@ -5,6 +5,9 @@
 {% for event in events %}
     <p>{{event.title}}<br>{{event.date}}</p>
 {% endfor %}
+<h2>Notices:</h2>
 {% for notice in notices %}
     <p>{{notice.title}}</p>
+{% empty %}
+    <p>Nothing here yet</p>
 {% endfor %}
