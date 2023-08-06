@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+
+<style>
+    h1 {
+        color:Green;
+    }
+    div.scroll {
+        margin:4px, 4px;
+        padding:4px;
+        background-color: green;
+        width: 500px;
+        height: 110px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        text-align:justify;
+    }
+</style>
+
+
+{% block content %}
+<h1>Homepage</h1>
+
+<p>Hello {{user.first_name}}</p>
+
+{% for forum in forums %}
+    <a href="{% url 'forums:forum' forum.id %}">{{forum.name}}</a>
+{% endfor %}
+{% for event in events %}
+    <p>{{event.title}}</p>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,10 @@
+<h1>{{forum.name}}</h1>
+<p>{{forum.about}}</p>
+<br>
+<h2>Events:</h2>
+{% for event in events %}
+    <p>{{event.title}}<br>{{event.date}}</p>
+{% endfor %}
+{% for notice in notices %}
+    <p>{{notice.title}}</p>
+{% endfor %}
