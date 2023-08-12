@@ -11,17 +11,19 @@
 <h2>Forums:</h2>
 {% for forum in forums %}
     <a href="{% url 'forums:forum' forum.id %}">{{forum.name}}</a>
+    <br>
 {% endfor %}
 <br>
 <h2>Added events :</h2>
 {% for event in users_events %}
-    <p>{{event.title}}<br>{{event.date}}</p>
+    <a href="{% url 'forums:event' event.id %}">{{event.title}}<br>{{event.date}}</a>
+    <br>
 {% endfor %}
 <br>
 <h2>Other Upcoming Events:</h2>
 {% for event in events %}
     {% if event not in users_events %}
-        <p>{{event.title}}<br>{{event.date}}</p>
+        <a href="{% url 'forums:event' event.id %}">{{event.title}}<br>{{event.date}}</a>
     {% endif %}
 {% endfor %}
 

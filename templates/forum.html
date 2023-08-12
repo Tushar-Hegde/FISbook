@@ -3,7 +3,7 @@
 <br>
 <h2>Events:</h2>
 {% for event in events %}
-    <p>{{event.title}}<br>{{event.date}}</p>
+    <a href="{% url 'forums:event' event.id %}">{{event.title}}<br>{{event.date}}</a>
 {% endfor %}
 <h2>Notices:</h2>
 {% for notice in notices %}

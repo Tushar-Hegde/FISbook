@@ -23,4 +23,5 @@ def explore(request):
     context = {'forums':forums,'events':events}
     return render(request,'explore.html',context)
     
+
     
