@@ -12,6 +12,11 @@ class CustomUserAdmin(UserAdmin):
     model = get_user_model()
     list_display = ["reg_no",'first_name',]
     ordering = ("reg_no",)
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('reg_no', 'first_name', 'password1', 'password2'),}),)
+
     fieldsets = (
             (("Basic Info"), {"fields": ("reg_no", "password")}),
             (("Personal info"), {"fields": ("first_name",)}),
