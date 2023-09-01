@@ -10,10 +10,10 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = get_user_model()
-    list_display = [model.USERNAME_FIELD,'first_name',]
-    ordering = (model.USERNAME_FIELD,)
+    list_display = ["reg_no",'first_name',]
+    ordering = ("reg_no",)
     fieldsets = (
-            (("Basic Info"), {"fields": (model.USERNAME_FIELD, "password")}),
+            (("Basic Info"), {"fields": ("reg_no", "password")}),
             (("Personal info"), {"fields": ("first_name",)}),
             (
                 ("Permissions"),

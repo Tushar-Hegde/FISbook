@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'forums.apps.ForumsConfig',
+    'chat.apps.ChatConfig',
     
     #Default
     'django.contrib.admin',

@@ -4,6 +4,8 @@
 <h2>Events:</h2>
 {% for event in events %}
     <a href="{% url 'forums:event' event.id %}">{{event.title}}<br>{{event.date}}</a>
+{% empty %}
+    <p>Nothing here yet</p>
 {% endfor %}
 <h2>Notices:</h2>
 {% for notice in notices %}
